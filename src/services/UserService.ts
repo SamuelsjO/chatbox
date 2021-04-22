@@ -29,6 +29,12 @@ constructor(){
         //se nao existir, salvar banco de dados
         return user;
     }
+
+    async findByEmail(email: string){
+        const user = await this.userRepository.findOne({ email });
+        
+        return user;
+    }
 }
 
 export { UserService }
